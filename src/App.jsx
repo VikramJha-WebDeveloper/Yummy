@@ -12,6 +12,8 @@ function App() {
     themeColors: {
       firstColor: "danger",
       lightDark: "#888887",
+      bgColor: "#f2f2f2",
+      dangerColor: "#dc3545",
     },
     fontFamily: '"Edu AU VIC WA NT Hand", cursive',
   };

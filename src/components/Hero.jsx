@@ -33,7 +33,7 @@ const Hero = () => {
   `;
 
   const HeroSection = styled.div`
-    background-color: #f2f2f2;
+    background-color: ${defaultSettings.themeColors.bgColor};
     height: calc(100vh - 56px);
     h1 {
       word-spacing: 10px;
