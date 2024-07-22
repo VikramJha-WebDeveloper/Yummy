@@ -11,7 +11,7 @@ function App() {
   const defaultSettings = {
     themeColors: {
       firstColor: "danger",
-      lightDark: "#888887",
+      lightDark: "#f204ca",
       bgColor: "#f2f2f2",
       dangerColor: "#dc3545",
     },

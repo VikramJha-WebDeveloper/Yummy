@@ -1,0 +1,73 @@
+import React, { useContext } from "react";
+import CountUp from "react-countup";
+import { useInView } from "react-intersection-observer";
+import BgImage from "/images/statsImg.jpg";
+import { settings } from "../App";
+
+const items = [
+  {
+    name: "item_1",
+    start: 0,
+    end: 232,
+    about: "Clients",
+  },
+  {
+    name: "item_2",
+    start: 0,
+    end: 521,
+    about: "Projects",
+  },
+  {
+    name: "item_3",
+    start: 0,
+    end: 1453,
+    about: "Hours of Support",
+  },
+  {
+    name: "item_4",
+    start: 0,
+    end: 32,
+    about: "Workers",
+  },
+];
+
+const Stats = () => {
+  const defaultSettings = useContext(settings);
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.2, // Adjust this value to control when the counting starts
+  });
+
+  const bg = {
+    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(${BgImage})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundAttachment: "fixed",
+  };
+
+  return (
+    <div style={bg} className="py-5">
+      <div className="container p-5">
+        <div className="row">
+          {items.map((data) => (
+            <div className="col">
+              <div ref={ref}>
+                <h1 className="text-center m-0 fw-bolder display-5 text-light">
+                  {inView && (
+                    <CountUp
+                      start={data.start}
+                      end={data.end}
+                      duration={2.75}
+                    />
+                  )}
+                </h1>
+                <h6 className={`text-center text-light`}>{data.about}</h6>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+export default Stats;
