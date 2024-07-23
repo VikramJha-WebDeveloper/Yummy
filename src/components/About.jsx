@@ -18,9 +18,6 @@ import Video1 from "/videos/aboutVideo.mp4";
 // import heading section
 import SectionTitle from "./SectionTitle";
 
-//page title and description
-const data = createContext();
-
 // define keyframes
 const move = keyframes`
   from{
@@ -47,17 +44,18 @@ const About = () => {
   });
   const defaultSetting = useContext(settings);
 
-  const td = {
-    title: "About Us",
-    description: "Learn More About Us",
-  };
+  const title = "About Us";
+  const description = "Learn More About Us";
 
   return (
-    <data.Provider value={td}>
+    <>
       <div className="container py-5">
         <div className="row">
-          <div className="col col-12 text-uppercase">
-            <SectionTitle></SectionTitle>
+          <div className="col col-12">
+            <SectionTitle
+              title={title}
+              description={description}
+            ></SectionTitle>
           </div>
         </div>
         <div className="row mt-5">
@@ -132,9 +130,8 @@ const About = () => {
           </div>
         </div>
       </div>
-    </data.Provider>
+    </>
   );
 };
 
 export default About;
-export { data };
