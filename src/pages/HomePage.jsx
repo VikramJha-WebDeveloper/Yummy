@@ -4,6 +4,7 @@ import About from "../components/About";
 import Choose from "../components/Choose";
 import Stats from "../components/Stats";
 import Menu from "../components/Menu";
+import Testimonials from "../components/testimonials";
 
 const HomePage = () => {
   return (
@@ -13,6 +14,7 @@ const HomePage = () => {
       <Choose></Choose>
       <Stats></Stats>
       <Menu></Menu>
+      <Testimonials></Testimonials>
     </>
   );
 };

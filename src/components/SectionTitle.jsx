@@ -16,7 +16,7 @@ const SectionTitle = ({ title, description }) => {
   `;
 
   return (
-    <TitleSection>
+    <TitleSection className="mb-5">
       <h2
         className={`text-uppercase fs-6 text-center mb-3 text-${defaultSettings.themeColors.firstColor}`}
       >

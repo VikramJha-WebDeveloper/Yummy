@@ -6,24 +6,28 @@ import { settings } from "../App";
 
 const items = [
   {
+    id: 1,
     name: "item_1",
     start: 0,
     end: 232,
     about: "Clients",
   },
   {
+    id: 2,
     name: "item_2",
     start: 0,
     end: 521,
     about: "Projects",
   },
   {
+    id: 3,
     name: "item_3",
     start: 0,
     end: 1453,
     about: "Hours of Support",
   },
   {
+    id: 4,
     name: "item_4",
     start: 0,
     end: 32,
@@ -50,7 +54,10 @@ const Stats = () => {
       <div className="container p-5">
         <div className="row">
           {items.map((data) => (
-            <div className="col">
+            <div
+              key={data.id}
+              className="col-12 col-lg-3 col-md-6 mt-5 mt-md-0"
+            >
               <div ref={ref}>
                 <h1 className="text-center m-0 fw-bolder display-5 text-light">
                   {inView && (

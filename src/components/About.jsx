@@ -58,7 +58,7 @@ const About = () => {
             ></SectionTitle>
           </div>
         </div>
-        <div className="row mt-5">
+        <div className="row">
           <div className="col col-12 col-lg-7">
             <div className="card border-0">
               <img className="img-fluid" src={Img1} />
