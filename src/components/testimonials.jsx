@@ -83,7 +83,7 @@ const Testimonials = () => {
           </div>
         </div>
         <div className="row text-light">
-          <div className="mx-auto col col-8">
+          <div className="mx-auto col col-12 col-lg-8">
             <div
               id="testimonialCarousel"
               className="carousel slide"

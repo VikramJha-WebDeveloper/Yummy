@@ -5,6 +5,8 @@ import Choose from "../components/Choose";
 import Stats from "../components/Stats";
 import Menu from "../components/Menu";
 import Testimonials from "../components/testimonials";
+import Events from "../components/Events";
+import Chefs from "../components/Chefs";
 
 const HomePage = () => {
   return (
@@ -15,6 +17,8 @@ const HomePage = () => {
       <Stats></Stats>
       <Menu></Menu>
       <Testimonials></Testimonials>
+      <Events></Events>
+      <Chefs></Chefs>
     </>
   );
 };
