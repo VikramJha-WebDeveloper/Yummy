@@ -7,6 +7,7 @@ import Menu from "../components/Menu";
 import Testimonials from "../components/testimonials";
 import Events from "../components/Events";
 import Chefs from "../components/Chefs";
+import BookTable from "../components/BookTable";
 
 const HomePage = () => {
   return (
@@ -19,6 +20,7 @@ const HomePage = () => {
       <Testimonials></Testimonials>
       <Events></Events>
       <Chefs></Chefs>
+      <BookTable></BookTable>
     </>
   );
 };
