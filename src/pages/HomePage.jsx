@@ -10,6 +10,7 @@ import Chefs from "../components/Chefs";
 import BookTable from "../components/BookTable";
 // import Gallery from "../components/Gallery";
 import Contact from "../components/Contact";
+import Footer from "../components/Footer";
 
 const HomePage = () => {
   return (
@@ -25,6 +26,7 @@ const HomePage = () => {
       <BookTable></BookTable>
       {/* <Gallery></Gallery> */}
       <Contact></Contact>
+      <Footer></Footer>
     </>
   );
 };
