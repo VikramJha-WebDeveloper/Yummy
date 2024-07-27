@@ -8,7 +8,7 @@ import Testimonials from "../components/testimonials";
 import Events from "../components/Events";
 import Chefs from "../components/Chefs";
 import BookTable from "../components/BookTable";
-// import Gallery from "../components/Gallery";
+import Gallery from "../components/Gallery";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 
@@ -24,7 +24,7 @@ const HomePage = () => {
       <Events></Events>
       <Chefs></Chefs>
       <BookTable></BookTable>
-      {/* <Gallery></Gallery> */}
+      <Gallery></Gallery>
       <Contact></Contact>
       <Footer></Footer>
     </>
