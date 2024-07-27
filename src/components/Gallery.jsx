@@ -81,7 +81,7 @@ const Gallery = () => {
 
     .slick-center {
       transform: scale(1) rotateY(0deg);
-      border: ${`5px solid ${defaultSettings.themeColors.dangerColor}`};
+      /* border: ${`5px solid ${defaultSettings.themeColors.dangerColor}`}; */
     }
 
     .slick-slide:not(.slick-center) {
