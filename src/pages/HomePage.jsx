@@ -8,6 +8,8 @@ import Testimonials from "../components/testimonials";
 import Events from "../components/Events";
 import Chefs from "../components/Chefs";
 import BookTable from "../components/BookTable";
+// import Gallery from "../components/Gallery";
+import Contact from "../components/Contact";
 
 const HomePage = () => {
   return (
@@ -21,6 +23,8 @@ const HomePage = () => {
       <Events></Events>
       <Chefs></Chefs>
       <BookTable></BookTable>
+      {/* <Gallery></Gallery> */}
+      <Contact></Contact>
     </>
   );
 };
