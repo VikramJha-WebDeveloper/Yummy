@@ -142,7 +142,9 @@ const Menu = () => {
           {selectedImage && <img src={selectedImage} className="img-fluid" />}
         </Modal.Body>
         <Modal.Footer>
-          <button className="btn btn-secondary d-flex align-items-center justify-content-center">
+          <button
+            className={`btn btn-${defaultSettings.themeColors.firstColor} d-flex align-items-center justify-content-center`}
+          >
             <FaWindowClose onClick={() => handleOnClose()} />
           </button>
         </Modal.Footer>
