@@ -1,6 +1,7 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { settings } from "../App";
 import { styled } from "styled-components";
+import AOS from "aos";
 
 // import react icons
 import { BsClipboardDataFill } from "react-icons/bs";
@@ -8,6 +9,11 @@ import { FaGem } from "react-icons/fa";
 import { MdAllInbox } from "react-icons/md";
 
 const Choose = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+    });
+  });
   const defaultSettings = useContext(settings);
 
   // create styled component
@@ -27,7 +33,7 @@ const Choose = () => {
     <ChooseSection>
       <div className="container py-5">
         <div className="row">
-          <div className={`col col-12 col-lg-4`}>
+          <div className={`col col-12 col-lg-4`} data-aos="flip-left">
             <div
               className={`bg-${defaultSettings.themeColors.firstColor} h-100 d-flex flex-column align-items-center justify-content-center p-4 text-light`}
             >
@@ -49,7 +55,10 @@ const Choose = () => {
           </div>
           <div className="col col-12 col-lg-8">
             <div className="row h-100">
-              <div className="col col-12 col-xl-4 mt-3 mt-xl-0">
+              <div
+                className="col col-12 col-xl-4 mt-3 mt-xl-0"
+                data-aos="flip-left"
+              >
                 <div
                   style={{ backgroundColor: "white" }}
                   className="d-flex flex-column align-items-center justify-content-center p-4 h-100 chooseBox"
@@ -71,7 +80,10 @@ const Choose = () => {
                   </p>
                 </div>
               </div>
-              <div className="col col-12 col-xl-4 mt-3 mt-xl-0">
+              <div
+                className="col col-12 col-xl-4 mt-3 mt-xl-0"
+                data-aos="flip-left"
+              >
                 <div
                   style={{ backgroundColor: "white" }}
                   className="d-flex flex-column align-items-center justify-content-center p-4 h-100 chooseBox"
@@ -93,7 +105,10 @@ const Choose = () => {
                   </p>
                 </div>
               </div>
-              <div className="col col-12 col-xl-4 mt-3 mt-xl-0">
+              <div
+                className="col col-12 col-xl-4 mt-3 mt-xl-0"
+                data-aos="flip-left"
+              >
                 <div
                   style={{ backgroundColor: "white" }}
                   className="d-flex flex-column align-items-center justify-content-center p-4 h-100 chooseBox"

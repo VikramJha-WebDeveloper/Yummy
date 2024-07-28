@@ -1,11 +1,17 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import SectionTitle from "./SectionTitle";
+import AOS from "aos";
 
 // import images
 import Img from "/images/tableImg.jpg";
 import { settings } from "../App";
 
 const BookTable = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+    });
+  });
   const defaultSettings = useContext(settings);
 
   const title = "Bool a Table";
@@ -24,6 +30,7 @@ const BookTable = () => {
         <div
           className={`row align-items-center p-5 rounded`}
           style={{ backgroundColor: `${defaultSettings.themeColors.bgColor}` }}
+          data-aos="fade-up"
         >
           <div className="col col-12 col-lg-3 d-flex align-items-center justify-content-center mb-4 mb-lg-0">
             <img src={Img} className="img-fluid" />

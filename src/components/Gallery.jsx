@@ -1,6 +1,7 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import styled from "styled-components";
 import { settings as set } from "../App";
+import AOS from "aos";
 
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -20,6 +21,11 @@ import { Autoplay } from "swiper/modules";
 import SectionTitle from "./SectionTitle";
 
 const Gallery = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+    });
+  });
   const defaultSettings = useContext(set);
   const title = "Gallery";
   const description = "Check Our Gallery";
@@ -131,7 +137,7 @@ const Gallery = () => {
     <Swip>
       <div className="container py-5">
         <SectionTitle title={title} description={description}></SectionTitle>
-        <div className="row">
+        <div className="row" data-aos="zoom-in">
           <div className="col col-12">
             <div className="slider-container">
               <Slider {...settings}>

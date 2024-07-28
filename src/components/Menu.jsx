@@ -1,7 +1,10 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import SectionTitle from "./SectionTitle";
 import { settings } from "../App";
 import styled from "styled-components";
+import { Modal, Button } from "react-bootstrap";
+import { FaWindowClose } from "react-icons/fa";
+import AOS from "aos";
 
 // import images
 import img1 from "/images/menu1.jpg";
@@ -19,6 +22,7 @@ const data = [
     title: "Mangam Tiste",
     description: "Lorem, ipsum, dolor, sit, amet",
     price: `$${5.95}`,
+    fadeDelay: 100,
   },
   {
     id: 2,
@@ -26,6 +30,7 @@ const data = [
     title: "Mangam Tiste",
     description: "Lorem, ipsum, dolor, sit, amet",
     price: `$${14.95}`,
+    fadeDelay: 200,
   },
   {
     id: 3,
@@ -33,6 +38,7 @@ const data = [
     title: "Mangam Tiste",
     description: "Lorem, ipsum, dolor, sit, amet",
     price: `$${8.95}`,
+    fadeDelay: 300,
   },
   {
     id: 4,
@@ -40,6 +46,7 @@ const data = [
     title: "Mangam Tiste",
     description: "Lorem, ipsum, dolor, sit, amet",
     price: `$${12.95}`,
+    fadeDelay: 100,
   },
   {
     id: 5,
@@ -47,6 +54,7 @@ const data = [
     title: "Mangam Tiste",
     description: "Lorem, ipsum, dolor, sit, amet",
     price: `$${12.95}`,
+    fadeDelay: 200,
   },
   {
     id: 6,
@@ -54,11 +62,27 @@ const data = [
     title: "Mangam Tiste",
     description: "Lorem, ipsum, dolor, sit, amet",
     price: `$${9.95}`,
+    fadeDelay: 300,
   },
 ];
 
 const Menu = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+    });
+  });
   const defaultSettings = useContext(settings);
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [showModal, setShowModal] = useState(false);
+  const handleOnClick = (img) => {
+    setSelectedImage(img);
+    setShowModal(true);
+  };
+  const handleOnClose = () => {
+    setShowModal(false);
+    setSelectedImage(null);
+  };
   const title = "Our Menu";
   const description = "Check Our Yummy Menu";
 
@@ -81,22 +105,22 @@ const Menu = () => {
         </div>
         <div className="row">
           {data.map((item) => (
-            <div key={item.id} className="col col-12 col-lg-4 mt-3">
+            <div
+              key={item.id}
+              className="col col-12 col-lg-4 mt-3"
+              data-aos="fade-up"
+              data-aos-delay={item.fadeDelay}
+            >
               <div className="card overflow-hidden">
                 <img
                   src={item.img}
                   data-bs-toggle="modal"
                   data-bs-target="#imgModal"
+                  onClick={() => {
+                    handleOnClick(item.img);
+                  }}
                 />
-                <div className="modal fade" id="imgModal">
-                  <div className="modal-dialog">
-                    <div className="modal-content">
-                      <div className="modal-body">
-                        <img src={item.img} className="img-fluid" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
+
                 <div className="card-body text-center">
                   <h3 className="card-title fs-4 fw-normal">{item.title}</h3>
                   <p className="card-text text-secondary">{item.description}</p>
@@ -111,6 +135,18 @@ const Menu = () => {
           ))}
         </div>
       </div>
+
+      {/* Modal */}
+      <Modal show={showModal}>
+        <Modal.Body>
+          {selectedImage && <img src={selectedImage} className="img-fluid" />}
+        </Modal.Body>
+        <Modal.Footer>
+          <button className="btn btn-secondary d-flex align-items-center justify-content-center">
+            <FaWindowClose onClick={() => handleOnClose()} />
+          </button>
+        </Modal.Footer>
+      </Modal>
     </MenuSection>
   );
 };

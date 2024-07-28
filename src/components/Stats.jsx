@@ -1,8 +1,9 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 import BgImage from "/images/statsImg.jpg";
 import { settings } from "../App";
+import AOS from "aos";
 
 const items = [
   {
@@ -36,6 +37,11 @@ const items = [
 ];
 
 const Stats = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+    });
+  });
   const defaultSettings = useContext(settings);
   const { ref, inView } = useInView({
     triggerOnce: true,
@@ -58,7 +64,7 @@ const Stats = () => {
               key={data.id}
               className="col-12 col-lg-3 col-md-6 mt-5 mt-md-0"
             >
-              <div ref={ref}>
+              <div ref={ref} data-aos="fade-up">
                 <h1 className="text-center m-0 fw-bolder display-5 text-light">
                   {inView && (
                     <CountUp

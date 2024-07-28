@@ -1,4 +1,4 @@
-import { React, useEffect, createContext, useContext } from "react";
+import { React, useEffect, useContext } from "react";
 import AOS from "aos";
 import { keyframes, styled } from "styled-components";
 
@@ -61,8 +61,11 @@ const About = () => {
         <div className="row">
           <div className="col col-12 col-lg-7">
             <div className="card border-0">
-              <img className="img-fluid" src={Img1} />
-              <div className="card-body border border-secondary border-4 my-3">
+              <img className="img-fluid" src={Img1} data-aos="fade-up" />
+              <div
+                className="card-body border border-secondary border-4 my-3"
+                data-aos="fade-up"
+              >
                 <h4 className="text-center">Book a Table</h4>
                 <h5
                   className={`text-center fs-3 text-${defaultSetting.themeColors.firstColor}`}
@@ -72,7 +75,7 @@ const About = () => {
               </div>
             </div>
           </div>
-          <div className="col col-12 col-lg-5">
+          <div className="col col-12 col-lg-5" data-aos="fade-up">
             <p style={{ color: `${defaultSetting.themeColors.lightDark}` }}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.

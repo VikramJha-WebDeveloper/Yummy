@@ -1,6 +1,7 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import SectionTitle from "./SectionTitle";
 import styled from "styled-components";
+import AOS from "aos";
 
 // import images
 import Img1 from "/images/testimonialImg1.jpg";
@@ -64,6 +65,11 @@ const data = [
 ];
 
 const Testimonials = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+    });
+  });
   const defaultSettings = useContext(settings);
   const title = "Testimonials";
   const description = "What are they saying about us";
@@ -83,7 +89,7 @@ const Testimonials = () => {
           </div>
         </div>
         <div className="row text-light">
-          <div className="mx-auto col col-12 col-lg-8">
+          <div className="mx-auto col col-12 col-lg-8" data-aos="zoom-in">
             <div
               id="testimonialCarousel"
               className="carousel slide"
@@ -92,6 +98,7 @@ const Testimonials = () => {
               <div className="carousel-indicators">
                 {data.map((testimonial) => (
                   <button
+                    key={testimonial.id}
                     type="button"
                     data-bs-target="#testimonialCarousel"
                     data-bs-slide-to={data.indexOf(testimonial)}

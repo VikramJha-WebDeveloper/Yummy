@@ -1,7 +1,8 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import SectionTitle from "./SectionTitle";
 import styled from "styled-components";
 import { settings } from "../App";
+import AOS from "aos";
 
 //import react icons
 import { FaLocationDot } from "react-icons/fa6";
@@ -10,6 +11,11 @@ import { MdEmail } from "react-icons/md";
 import { FaClock } from "react-icons/fa";
 
 const Contact = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+    });
+  });
   const title = "Contact";
   const description = "Need Help? Contact Us";
 
@@ -41,7 +47,7 @@ const Contact = () => {
           </div>
         </div>
         <div className="row">
-          <div className="col col-12">
+          <div className="col col-12" data-aos="fade-up">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3493.5537420098226!2d77.07331117496607!3d28.881888772714458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390da96923f6a47b%3A0x5b051e8fb5fdccfe!2sSafiabad%20Rd!5e0!3m2!1sen!2sin!4v1722057668526!5m2!1sen!2sin"
               width="100%"
@@ -53,7 +59,11 @@ const Contact = () => {
           </div>
         </div>
         <div className="row">
-          <div className="col col-12 col-lg-6">
+          <div
+            className="col col-12 col-lg-6"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
             <div className="row box rounded m-1 my-3 p-2">
               <div className="col col-1 d-flex align-items-center justify-content-center">
                 <FaLocationDot className="fs-2" />
@@ -64,7 +74,11 @@ const Contact = () => {
               </div>
             </div>
           </div>
-          <div className="col col-12 col-lg-6">
+          <div
+            className="col col-12 col-lg-6"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
             <div className="row box rounded m-1 my-3 p-2">
               <div className="col col-1 d-flex align-items-center justify-content-center">
                 <IoCall className="fs-2" />
@@ -75,7 +89,11 @@ const Contact = () => {
               </div>
             </div>
           </div>
-          <div className="col col-12 col-lg-6">
+          <div
+            className="col col-12 col-lg-6"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
             <div className="row box rounded m-1 my-3 p-2">
               <div className="col col-1 d-flex align-items-center justify-content-center">
                 <MdEmail className="fs-2" />
@@ -86,7 +104,11 @@ const Contact = () => {
               </div>
             </div>
           </div>
-          <div className="col col-12 col-lg-6">
+          <div
+            className="col col-12 col-lg-6"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
             <div className="row box rounded m-1 my-3 p-2">
               <div className="col col-1 d-flex align-items-center justify-content-center">
                 <FaClock className="fs-2" />
@@ -99,7 +121,11 @@ const Contact = () => {
               </div>
             </div>
           </div>
-          <div className="col col-12 form py-4 rounded mt-3">
+          <div
+            className="col col-12 form py-4 rounded mt-3"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
             <form>
               <div className="row g-3">
                 <div className="col col-12 col-lg-6">
