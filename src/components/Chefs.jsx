@@ -44,7 +44,7 @@ const Chefs = () => {
 
   const ChefSection = styled.div``;
   return (
-    <ChefSection className="mt-5">
+    <ChefSection id="chefs" className="mt-5">
       <div className="container py-5">
         <div className="row">
           <div className="col col-12">

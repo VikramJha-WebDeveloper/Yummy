@@ -47,7 +47,7 @@ const Hero = () => {
     }
   `;
   return (
-    <HeroSection>
+    <HeroSection id="hero">
       <div className="container h-100">
         <div className="row h-100">
           <div className="col col-12 col-lg-6 d-flex flex-column align-items-start justify-content-center order-2 order-lg-1">

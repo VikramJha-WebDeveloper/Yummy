@@ -91,7 +91,7 @@ const Events = () => {
   `;
 
   return (
-    <EventsSection>
+    <EventsSection id="events">
       <Slider {...settings}>
         {data.map((item) => (
           <div key={data.indexOf(item)} className="position-relative">

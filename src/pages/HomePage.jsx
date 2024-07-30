@@ -16,6 +16,7 @@ const HomePage = () => {
   return (
     <>
       <Hero></Hero>
+
       <About></About>
       <Choose></Choose>
       <Stats></Stats>

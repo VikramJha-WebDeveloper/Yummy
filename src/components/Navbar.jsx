@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-scroll";
 
 const Navbar = () => {
   const NavSection = styled.div`
@@ -11,14 +11,17 @@ const Navbar = () => {
     li {
       margin: 0px 10px;
     }
+    a {
+      cursor: pointer;
+    }
   `;
   return (
     <NavSection>
       <nav className="navbar navbar-expand-lg bg-light navbar-light">
         <div className="container">
-          <NavLink to="/" className="navbar-brand fw-bolder">
+          <Link to="/" className="navbar-brand fw-bolder">
             Yummy
-          </NavLink>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -30,34 +33,54 @@ const Navbar = () => {
           <div className="collapse navbar-collapse" id="navToggle">
             <ul className="navbar-nav mx-auto">
               <li className="nav-item">
-                <NavLink to="/" className="nav-link">
+                <Link to="hero" className="nav-link" smooth={true} duration={0}>
                   Home
-                </NavLink>
+                </Link>
               </li>
               <li className="nav-item">
-                <a href="#" className="nav-link">
+                <Link
+                  to="about"
+                  className="nav-link"
+                  smooth={true}
+                  duration={0}
+                >
                   About
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a href="#" className="nav-link">
+                <Link to="menu" className="nav-link" smooth={true} duration={0}>
                   Menu
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a href="#" className="nav-link">
+                <Link
+                  to="events"
+                  className="nav-link"
+                  smooth={true}
+                  duration={0}
+                >
                   Events
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a href="#" className="nav-link">
+                <Link
+                  to="chefs"
+                  className="nav-link"
+                  smooth={true}
+                  duration={0}
+                >
                   Chefs
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a href="#" className="nav-link">
+                <Link
+                  to="gallery"
+                  className="nav-link"
+                  smooth={true}
+                  duration={0}
+                >
                   Gallery
-                </a>
+                </Link>
               </li>
               <li className="nav-item dropdown">
                 <a
@@ -111,9 +134,14 @@ const Navbar = () => {
                 </ul>
               </li>
               <li className="nav-item">
-                <a href="#" className="nav-link">
+                <Link
+                  to="contact"
+                  className="nav-link"
+                  smooth={true}
+                  duration={0}
+                >
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
             <a href="#" className="btn btn-danger">

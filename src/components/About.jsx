@@ -49,7 +49,7 @@ const About = () => {
 
   return (
     <>
-      <div className="container py-5">
+      <div id="about" className="container py-5">
         <div className="row">
           <div className="col col-12">
             <SectionTitle

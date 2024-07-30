@@ -135,7 +135,7 @@ const Gallery = () => {
 
   return (
     <Swip>
-      <div className="container py-5">
+      <div id="gallery" className="container py-5">
         <SectionTitle title={title} description={description}></SectionTitle>
         <div className="row" data-aos="zoom-in">
           <div className="col col-12">
